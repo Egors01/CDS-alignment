@@ -1,0 +1,100 @@
+##sequence-region CY093418.1 1 999
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1056044
+CY093418.1	Genbank	region	1	999	.	+	.	ID=CY093418.1:1..999;Dbxref=taxon:1056044;Name=7;collection-date=01-Dec-2010;country=Colombia: Bogota;gbkey=Src;isolation-source=Throat;lab-host=MDCK2 passage(s);mol_type=viral cRNA;nat-host=human%3B gender Female;segment=7;serotype=H3N2;strain=A/Bogota/WRAIR3457T/2010
+CY093418.1	Genbank	gene	11	992	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+CY093418.1	Genbank	CDS	11	36	.	+	0	ID=cds-AEK29052.1;Parent=gene-M2;Dbxref=NCBI_GP:AEK29052.1;Name=AEK29052.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=AEK29052.1
+CY093418.1	Genbank	CDS	725	992	.	+	1	ID=cds-AEK29052.1;Parent=gene-M2;Dbxref=NCBI_GP:AEK29052.1;Name=AEK29052.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=AEK29052.1
+CY093418.1	Genbank	gene	11	769	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+CY093418.1	Genbank	CDS	11	769	.	+	0	ID=cds-AEK29051.1;Parent=gene-M1;Dbxref=NCBI_GP:AEK29051.1;Name=AEK29051.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=AEK29051.1
+
+##sequence-region KT888237.1 1 982
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1737172
+KT888237.1	Genbank	region	1	982	.	+	.	ID=KT888237.1:1..982;Dbxref=taxon:1737172;Name=7;collection-date=06-Feb-2013;country=Hungary: Budapest;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=Homo sapiens;segment=7;serotype=H3N2;strain=A/Budapest/1514A07805832T/2013
+KT888237.1	Genbank	gene	1	982	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+KT888237.1	Genbank	CDS	1	26	.	+	0	ID=cds-ALM04519.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04519.1;Name=ALM04519.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04519.1
+KT888237.1	Genbank	CDS	715	982	.	+	1	ID=cds-ALM04519.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04519.1;Name=ALM04519.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04519.1
+KT888237.1	Genbank	gene	1	759	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+KT888237.1	Genbank	CDS	1	759	.	+	0	ID=cds-ALM04518.1;Parent=gene-M1;Dbxref=NCBI_GP:ALM04518.1;Name=ALM04518.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=ALM04518.1
+
+##sequence-region CY121753.1 1 1003
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1184596
+CY121753.1	Genbank	region	1	1003	.	+	.	ID=CY121753.1:1..1003;Dbxref=taxon:1184596;Name=7;collection-date=2009;country=Finland;gbkey=Src;lab-host=E2 passage(s);mol_type=viral cRNA;nat-host=human;note=Cell culture isolated H3N2 virus passed two times in eggs.;segment=7;serotype=H3N2;strain=A/Finland/97/2009
+CY121753.1	Genbank	sequence_feature	1	1003	.	+	.	ID=id-CY121753.1:1..1003;Dbxref=IRD:NIGSP_BUCA_00096.MP;gbkey=misc_feature
+CY121753.1	Genbank	gene	14	995	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+CY121753.1	Genbank	CDS	14	39	.	+	0	ID=cds-AFM72929.1;Parent=gene-M2;Dbxref=NCBI_GP:AFM72929.1;Name=AFM72929.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=AFM72929.1
+CY121753.1	Genbank	CDS	728	995	.	+	1	ID=cds-AFM72929.1;Parent=gene-M2;Dbxref=NCBI_GP:AFM72929.1;Name=AFM72929.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=AFM72929.1
+CY121753.1	Genbank	gene	14	772	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+CY121753.1	Genbank	CDS	14	772	.	+	0	ID=cds-AFM72928.1;Parent=gene-M1;Dbxref=NCBI_GP:AFM72928.1;Name=AFM72928.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=AFM72928.1
+
+##sequence-region KT888102.1 1 982
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1737195
+KT888102.1	Genbank	region	1	982	.	+	.	ID=KT888102.1:1..982;Dbxref=taxon:1737195;Name=7;collection-date=03-Nov-2011;country=Peru: Iquitos;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=Homo sapiens;segment=7;serotype=H3N2;strain=A/Iquitos/CFI1471/2011
+KT888102.1	Genbank	gene	1	982	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+KT888102.1	Genbank	CDS	1	26	.	+	0	ID=cds-ALM04249.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04249.1;Name=ALM04249.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04249.1
+KT888102.1	Genbank	CDS	715	982	.	+	1	ID=cds-ALM04249.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04249.1;Name=ALM04249.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04249.1
+KT888102.1	Genbank	gene	1	759	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+KT888102.1	Genbank	CDS	1	759	.	+	0	ID=cds-ALM04248.1;Parent=gene-M1;Dbxref=NCBI_GP:ALM04248.1;Name=ALM04248.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=ALM04248.1
+
+##sequence-region KT888103.1 1 982
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1737196
+KT888103.1	Genbank	region	1	982	.	+	.	ID=KT888103.1:1..982;Dbxref=taxon:1737196;Name=7;collection-date=30-Nov-2011;country=Peru: Iquitos;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=Homo sapiens;segment=7;serotype=H3N2;strain=A/Iquitos/CFI1510/2011
+KT888103.1	Genbank	gene	1	982	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+KT888103.1	Genbank	CDS	1	26	.	+	0	ID=cds-ALM04251.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04251.1;Name=ALM04251.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04251.1
+KT888103.1	Genbank	CDS	715	982	.	+	1	ID=cds-ALM04251.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04251.1;Name=ALM04251.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04251.1
+KT888103.1	Genbank	gene	1	759	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+KT888103.1	Genbank	CDS	1	759	.	+	0	ID=cds-ALM04250.1;Parent=gene-M1;Dbxref=NCBI_GP:ALM04250.1;Name=ALM04250.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=ALM04250.1
+
+##sequence-region KT888117.1 1 982
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1737183
+KT888117.1	Genbank	region	1	982	.	+	.	ID=KT888117.1:1..982;Dbxref=taxon:1737183;Name=7;collection-date=10-Jan-2012;country=Peru: Callao;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=Homo sapiens;segment=7;serotype=H3N2;strain=A/Callao/IPE00830/2012
+KT888117.1	Genbank	gene	1	982	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+KT888117.1	Genbank	CDS	1	26	.	+	0	ID=cds-ALM04279.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04279.1;Name=ALM04279.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04279.1
+KT888117.1	Genbank	CDS	715	982	.	+	1	ID=cds-ALM04279.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04279.1;Name=ALM04279.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04279.1
+KT888117.1	Genbank	gene	1	759	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+KT888117.1	Genbank	CDS	1	759	.	+	0	ID=cds-ALM04278.1;Parent=gene-M1;Dbxref=NCBI_GP:ALM04278.1;Name=ALM04278.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=ALM04278.1
+
+##sequence-region KT888118.1 1 982
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1737184
+KT888118.1	Genbank	region	1	982	.	+	.	ID=KT888118.1:1..982;Dbxref=taxon:1737184;Name=7;collection-date=11-Jan-2012;country=Peru: Callao;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=Homo sapiens;segment=7;serotype=H3N2;strain=A/Callao/IPE00833/2012
+KT888118.1	Genbank	gene	1	982	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+KT888118.1	Genbank	CDS	1	26	.	+	0	ID=cds-ALM04281.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04281.1;Name=ALM04281.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04281.1
+KT888118.1	Genbank	CDS	715	982	.	+	1	ID=cds-ALM04281.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04281.1;Name=ALM04281.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04281.1
+KT888118.1	Genbank	gene	1	759	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+KT888118.1	Genbank	CDS	1	759	.	+	0	ID=cds-ALM04280.1;Parent=gene-M1;Dbxref=NCBI_GP:ALM04280.1;Name=ALM04280.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=ALM04280.1
+
+##sequence-region KT888208.1 1 982
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1737248
+KT888208.1	Genbank	region	1	982	.	+	.	ID=KT888208.1:1..982;Dbxref=taxon:1737248;Name=7;collection-date=07-Feb-2011;country=Russia: Moscow;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=Homo sapiens;segment=7;serotype=H3N2;strain=A/Moscow/1514A00504307T_CP2/2011
+KT888208.1	Genbank	gene	1	982	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+KT888208.1	Genbank	CDS	1	26	.	+	0	ID=cds-ALM04461.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04461.1;Name=ALM04461.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04461.1
+KT888208.1	Genbank	CDS	715	982	.	+	1	ID=cds-ALM04461.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04461.1;Name=ALM04461.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04461.1
+KT888208.1	Genbank	gene	1	759	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+KT888208.1	Genbank	CDS	1	759	.	+	0	ID=cds-ALM04460.1;Parent=gene-M1;Dbxref=NCBI_GP:ALM04460.1;Name=ALM04460.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=ALM04460.1
+
+##sequence-region KT888235.1 1 982
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1737170
+KT888235.1	Genbank	region	1	982	.	+	.	ID=KT888235.1:1..982;Dbxref=taxon:1737170;Name=7;collection-date=12-Dec-2011;country=Hungary: Budapest;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=Homo sapiens;segment=7;serotype=H3N2;strain=A/Budapest/1514A07804502N/2011
+KT888235.1	Genbank	gene	1	982	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+KT888235.1	Genbank	CDS	1	26	.	+	0	ID=cds-ALM04515.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04515.1;Name=ALM04515.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04515.1
+KT888235.1	Genbank	CDS	715	982	.	+	1	ID=cds-ALM04515.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04515.1;Name=ALM04515.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04515.1
+KT888235.1	Genbank	gene	1	759	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+KT888235.1	Genbank	CDS	1	759	.	+	0	ID=cds-ALM04514.1;Parent=gene-M1;Dbxref=NCBI_GP:ALM04514.1;Name=ALM04514.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=ALM04514.1
+
+##sequence-region KT888209.1 1 982
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1737249
+KT888209.1	Genbank	region	1	982	.	+	.	ID=KT888209.1:1..982;Dbxref=taxon:1737249;Name=7;collection-date=19-Jan-2012;country=Russia: Moscow;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=Homo sapiens;segment=7;serotype=H3N2;strain=A/Moscow/1514A00504942N/2012
+KT888209.1	Genbank	gene	1	982	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+KT888209.1	Genbank	CDS	1	26	.	+	0	ID=cds-ALM04463.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04463.1;Name=ALM04463.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04463.1
+KT888209.1	Genbank	CDS	715	982	.	+	1	ID=cds-ALM04463.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04463.1;Name=ALM04463.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04463.1
+KT888209.1	Genbank	gene	1	759	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+KT888209.1	Genbank	CDS	1	759	.	+	0	ID=cds-ALM04462.1;Parent=gene-M1;Dbxref=NCBI_GP:ALM04462.1;Name=ALM04462.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=ALM04462.1
+
+##sequence-region KT888236.1 1 982
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1737171
+KT888236.1	Genbank	region	1	982	.	+	.	ID=KT888236.1:1..982;Dbxref=taxon:1737171;Name=7;collection-date=05-Feb-2013;country=Hungary: Budapest;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=Homo sapiens;segment=7;serotype=H3N2;strain=A/Budapest/1514A07805419T/2013
+KT888236.1	Genbank	gene	1	982	.	+	.	ID=gene-M2;Name=M2;gbkey=Gene;gene=M2;gene_biotype=protein_coding
+KT888236.1	Genbank	CDS	1	26	.	+	0	ID=cds-ALM04517.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04517.1;Name=ALM04517.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04517.1
+KT888236.1	Genbank	CDS	715	982	.	+	1	ID=cds-ALM04517.1;Parent=gene-M2;Dbxref=NCBI_GP:ALM04517.1;Name=ALM04517.1;gbkey=CDS;gene=M2;product=matrix protein 2;protein_id=ALM04517.1
+KT888236.1	Genbank	gene	1	759	.	+	.	ID=gene-M1;Name=M1;gbkey=Gene;gene=M1;gene_biotype=protein_coding
+KT888236.1	Genbank	CDS	1	759	.	+	0	ID=cds-ALM04516.1;Parent=gene-M1;Dbxref=NCBI_GP:ALM04516.1;Name=ALM04516.1;gbkey=CDS;gene=M1;product=matrix protein 1;protein_id=ALM04516.1
+
