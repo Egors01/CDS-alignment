@@ -153,7 +153,7 @@ class CdsAlignment():
 
         else:
             # apply partitioning based on cds mapping
-            self.n_partitions = max(suggested_splits.iteritems(), key=operator.itemgetter(1))[0]
+            self.n_partitions = max(suggested_splits.items(), key=operator.itemgetter(1))[0]
             print(
                 'INFO:\tSuggested splits based on povided annotation <n_splits>:<count>\n\tids and count are in{}'.format(
                     self.split_analysis_file))
@@ -213,8 +213,8 @@ class CdsAlignment():
             if (orf_aa_seq.seq[0] == 'M' and orf_aa_seq.seq[-1] == '*') and str(orf_aa_seq.seq).count('*') == 1:
                 pass
             else:
-                raise RuntimeError(
-                    'Incorrect protein translation for {}. Expected it to be M->* AA sequence'.format(record.id))
+                text = 'Incorrect protein translation for {}. Expected it to be M->* AA sequence\n{}\n{}'.format(record.id,orf_nuc_seq,orf_aa_seq)
+                raise RuntimeError(text)
             self.cds_aa_list.append(orf_aa_seq)
             self.cds_nuc_list.append(orf_nuc_seq)
             if not len(five_seq.seq) == 0:
@@ -355,8 +355,11 @@ class CdsAlignment():
             SeqIO.write(concatenated_fasta_list, handle, 'fasta')
 
 
-# fasta = '/home/egors/Projects/CDS-alignment/genbank_sample_data/segment2.fasta'
+# input_file = '/home/egors/Projects/CDS-alignment/genbank_sample_data/segment2.fasta'
 # annot = '/home/egors/Projects/CDS-alignment/genbank_sample_data/annotation_segment2_test.tsv'
+# align=True
+# only_restore=False
+# output_file = './out.fa'
 # fasta = '/home/egors/Projects/CDS-alignment/gb_swine_NA/swine_sample.fasta'
 # annot = '/home/egors/Projects/CDS-alignment/gb_swine_NA/swine_cds_annot_table.tsv'
 

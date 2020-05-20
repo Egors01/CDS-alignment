@@ -18,14 +18,11 @@ def rename_headers(input_file ,output_file,index_file):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '--fasta', type=str, help='input  fasta', required=True, action='store')
-    parser.add_argument('-ind', '--index', type=str, help='table <new_header>-<old header>', required=True, action='store')
+    parser.add_argument('-ind', '--index', type=str, help='output table with <new_header><old header> records', required=True, action='store')
     parser.add_argument('-o', '--out', type=str, help='output fasta file with new headers', required=True, action='store')
     args = parser.parse_args()
 
     input_file = args.fasta
     output_file = args.out
     index_file = args.index
-    # input_file = '/home/egors/Projects/CDS-alignment/genbank_sample_data/sequences.fasta'
-    # output_file = '/home/egors/Projects/CDS-alignment/genbank_sample_data/to_align.fasta'
-    # index_file = '/home/egors/Projects/CDS-alignment/genbank_sample_data/fasta_header_to_id.tsv'
     rename_headers(input_file ,output_file,index_file)
