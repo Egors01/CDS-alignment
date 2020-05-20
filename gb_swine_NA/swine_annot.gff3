@@ -1,0 +1,384 @@
+##sequence-region AY747610.2 1 1458
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=295670
+AY747610.2	Genbank	region	1	1458	.	+	.	ID=AY747610.2:1..1458;Dbxref=taxon:295670;country=China;gbkey=Src;isolation-source=swine;mol_type=genomic RNA;serotype=H5N1;strain=A/swine/Fujian/1/2003
+AY747610.2	Genbank	gene	21	1430	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+AY747610.2	Genbank	CDS	21	1430	.	+	0	ID=cds-AAV30829.1;Parent=gene-NA;Dbxref=NCBI_GP:AAV30829.1;Name=AAV30829.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AAV30829.1
+
+##sequence-region DQ997254.1 1 1398
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=404191
+DQ997254.1	Genbank	region	1	1398	.	+	.	ID=DQ997254.1:1..1398;Dbxref=taxon:404191;Name=6;country=China;gbkey=Src;mol_type=viral cRNA;segment=6;serotype=H5N1;strain=A/swine/Henan/wy/2004
+DQ997254.1	Genbank	gene	21	1370	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+DQ997254.1	Genbank	CDS	21	1370	.	+	0	ID=cds-ABJ16474.1;Parent=gene-NA;Dbxref=NCBI_GP:ABJ16474.1;Name=ABJ16474.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ABJ16474.1
+
+##sequence-region EU163948.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=644774
+EU163948.1	Genbank	region	1	1410	.	+	.	ID=EU163948.1:1..1410;Dbxref=taxon:644774;Name=6;country=Germany;gbkey=Src;mol_type=mRNA;old-name=Influenza A virus (A/swine/Bakum/1769/03(H3N2));segment=6;serotype=H3N2;strain=A/swine/Bakum/IDT1769/2003
+EU163948.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ABV60699.1;Dbxref=NCBI_GP:ABV60699.1;Name=ABV60699.1;gbkey=CDS;product=neuraminidase;protein_id=ABV60699.1
+
+##sequence-region EU516313.1 1 1457
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=506038
+EU516313.1	Genbank	region	1	1457	.	+	.	ID=EU516313.1:1..1457;Dbxref=taxon:506038;Name=6;gbkey=Src;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H9N2;strain=A/swine/Guangdong/wxl/2004
+EU516313.1	Genbank	gene	20	1420	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+EU516313.1	Genbank	CDS	20	1420	.	+	0	ID=cds-ACA42429.1;Parent=gene-NA;Dbxref=NCBI_GP:ACA42429.1;Name=ACA42429.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACA42429.1
+
+##sequence-region FJ157987.1 1 1466
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=556021
+FJ157987.1	Genbank	region	1	1466	.	+	.	ID=FJ157987.1:1..1466;Dbxref=taxon:556021;Name=6;collection-date=25-Mar-2004;country=China;gbkey=Src;isolation-source=lung samples;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H3N2;strain=A/swine/Guangxi/1/2004
+FJ157987.1	Genbank	gene	20	1429	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+FJ157987.1	Genbank	CDS	20	1429	.	+	0	ID=cds-ACH69646.1;Parent=gene-NA;Dbxref=NCBI_GP:ACH69646.1;Name=ACH69646.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACH69646.1
+
+##sequence-region AB434306.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=519833
+AB434306.1	DDBJ	region	1	1410	.	+	.	ID=AB434306.1:1..1410;Dbxref=taxon:519833;Name=6;collection-date=2004;country=Thailand: Chonburi;gbkey=Src;isolation-source=Swine;mol_type=genomic RNA;segment=6;serotype=H1N1;strain=A/swine/Chonburi/NIAH9469/2004
+AB434306.1	DDBJ	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+AB434306.1	DDBJ	CDS	1	1410	.	+	0	ID=cds-BAH02052.1;Parent=gene-NA;Dbxref=NCBI_GP:BAH02052.1;Name=BAH02052.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=BAH02052.1
+
+##sequence-region AB434314.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=519834
+AB434314.1	DDBJ	region	1	1410	.	+	.	ID=AB434314.1:1..1410;Dbxref=taxon:519834;Name=6;collection-date=2004;country=Thailand: Chonburi;gbkey=Src;isolation-source=Swine;mol_type=genomic RNA;segment=6;serotype=H1N1;strain=A/swine/Chonburi/NIAH977/2004
+AB434314.1	DDBJ	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+AB434314.1	DDBJ	CDS	1	1410	.	+	0	ID=cds-BAH02062.1;Parent=gene-NA;Dbxref=NCBI_GP:BAH02062.1;Name=BAH02062.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=BAH02062.1
+
+##sequence-region AB434346.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=519835
+AB434346.1	DDBJ	region	1	1410	.	+	.	ID=AB434346.1:1..1410;Dbxref=taxon:519835;Name=6;collection-date=2003;country=Thailand: Chachoengsao;gbkey=Src;isolation-source=Swine;mol_type=genomic RNA;segment=6;serotype=H3N2;strain=A/swine/Chachoengsao/2003
+AB434346.1	DDBJ	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+AB434346.1	DDBJ	CDS	1	1410	.	+	0	ID=cds-BAH02102.1;Parent=gene-NA;Dbxref=NCBI_GP:BAH02102.1;Name=BAH02102.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=BAH02102.1
+
+##sequence-region GQ161100.1 1 1452
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=644774
+GQ161100.1	Genbank	region	1	1452	.	+	.	ID=GQ161100.1:1..1452;Dbxref=taxon:644774;Name=6;collection-date=07-Mar-2003;country=Germany;gbkey=Src;mol_type=viral cRNA;nat-host=swine;note=highly-passaged variant used for trivalent vaccine production%3B 3 passages in embryonated hens eggs%2C 22 passages in Madin Darby Bovine Kidney (MDBK) cells;segment=6;serotype=H3N2;strain=A/swine/Bakum/IDT1769/2003
+GQ161100.1	Genbank	gene	21	1430	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ161100.1	Genbank	CDS	21	1430	.	+	0	ID=cds-ACR39300.1;Parent=gene-NA;Dbxref=NCBI_GP:ACR39300.1;Name=ACR39300.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACR39300.1
+
+##sequence-region GQ161114.1 1 1374
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=472027
+GQ161114.1	Genbank	region	1	1374	.	+	.	ID=GQ161114.1:1..1374;Dbxref=taxon:472027;Name=6;collection-date=09-Oct-2003;country=Germany;gbkey=Src;mol_type=viral cRNA;nat-host=swine;note=highly-passaged variant used for trivalent vaccine production%3B 3 passages in embryonated hens eggs%2C 21 passages in Madin Darby Bovine Kidney (MDBK) cells;segment=6;serotype=H1N1;strain=A/swine/Haseluenne/IDT2617/2003
+GQ161114.1	Genbank	gene	21	1361	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ161114.1	Genbank	CDS	21	1361	.	+	0	ID=cds-ACR39302.1;Parent=gene-NA;Dbxref=NCBI_GP:ACR39302.1;Name=ACR39302.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACR39302.1
+
+##sequence-region GQ161121.1 1 1443
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=472027
+GQ161121.1	Genbank	region	1	1443	.	+	.	ID=GQ161121.1:1..1443;Dbxref=taxon:472027;Name=6;collection-date=09-Oct-2003;country=Germany;gbkey=Src;mol_type=viral cRNA;nat-host=swine;note=3 passages in embryonated hens eggs%2C 1 passage in Madin Darby Bovine Kidney (MDBK) cells;segment=6;serotype=H1N1;strain=A/swine/Haseluenne/IDT2617/2003
+GQ161121.1	Genbank	gene	21	1430	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ161121.1	Genbank	CDS	21	1430	.	+	0	ID=cds-ACR39303.1;Parent=gene-NA;Dbxref=NCBI_GP:ACR39303.1;Name=ACR39303.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACR39303.1
+
+##sequence-region GQ161158.1 1 1458
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=522737
+GQ161158.1	Genbank	region	1	1458	.	+	.	ID=GQ161158.1:1..1458;Dbxref=taxon:522737;Name=6;collection-date=07-Jan-2004;country=Germany;gbkey=Src;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Greven/IDT2889/2004
+GQ161158.1	Genbank	gene	21	1430	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ161158.1	Genbank	CDS	21	1430	.	+	0	ID=cds-ACR39312.1;Parent=gene-NA;Dbxref=NCBI_GP:ACR39312.1;Name=ACR39312.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACR39312.1
+
+##sequence-region GQ229322.1 1 1428
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=649632
+GQ229322.1	Genbank	region	1	1428	.	+	.	ID=GQ229322.1:1..1428;Dbxref=taxon:649632;Name=6;collection-date=24-Apr-2003;country=Hong Kong;gbkey=Src;mol_type=viral cRNA;nat-host=Sus scrofa;segment=6;serotype=H1N2;strain=A/swine/Hong Kong/554/2003
+GQ229322.1	Genbank	gene	19	1428	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ229322.1	Genbank	CDS	19	1428	.	+	0	ID=cds-ACR83970.1;Parent=gene-NA;Dbxref=NCBI_GP:ACR83970.1;Name=ACR83970.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACR83970.1
+
+##sequence-region GQ422396.1 1 1467
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=663195
+GQ422396.1	Genbank	region	1	1467	.	+	.	ID=GQ422396.1:1..1467;Dbxref=taxon:663195;Name=6;collection-date=2002;country=China;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H3N2;strain=A/swine/Guangdong/102/2002
+GQ422396.1	Genbank	gene	20	1429	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ422396.1	Genbank	CDS	20	1429	.	+	0	ID=cds-ACU46667.1;Parent=gene-NA;Dbxref=NCBI_GP:ACU46667.1;Name=ACU46667.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACU46667.1
+GQ422397.1	Genbank	match	1	1467	.	+	.	ID=aln0;Target=GQ422396.1 1 1467 +
+
+##sequence-region GQ422397.1 1 1467
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=663196
+GQ422397.1	Genbank	region	1	1467	.	+	.	ID=GQ422397.1:1..1467;Dbxref=taxon:663196;Name=6;collection-date=2002;country=China;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H3N2;strain=A/swine/Guangdong/106/2002
+GQ422397.1	Genbank	gene	20	1429	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ422397.1	Genbank	CDS	20	1429	.	+	0	ID=cds-ACU46668.1;Parent=gene-NA;Dbxref=NCBI_GP:ACU46668.1;Name=ACU46668.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACU46668.1
+GQ422397.1	Genbank	match	1	1467	.	+	.	ID=aln0;Target=GQ422396.1 1 1467 +
+
+##sequence-region GQ422398.1 1 1467
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=663199
+GQ422398.1	Genbank	region	1	1467	.	+	.	ID=GQ422398.1:1..1467;Dbxref=taxon:663199;Name=6;collection-date=2002;country=China;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H3N2;strain=A/swine/Guangdong/111/2002
+GQ422398.1	Genbank	gene	20	1429	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ422398.1	Genbank	CDS	20	1429	.	+	0	ID=cds-ACU46669.1;Parent=gene-NA;Dbxref=NCBI_GP:ACU46669.1;Name=ACU46669.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACU46669.1
+GQ422397.1	Genbank	match	1	1467	.	+	.	ID=aln0;Target=GQ422396.1 1 1467 +
+
+##sequence-region GQ422399.1 1 1467
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=663198
+GQ422399.1	Genbank	region	1	1467	.	+	.	ID=GQ422399.1:1..1467;Dbxref=taxon:663198;Name=6;collection-date=2002;country=China;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H3N2;strain=A/swine/Guangdong/110/2002
+GQ422399.1	Genbank	gene	20	1429	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ422399.1	Genbank	CDS	20	1429	.	+	0	ID=cds-ACU46670.1;Parent=gene-NA;Dbxref=NCBI_GP:ACU46670.1;Name=ACU46670.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACU46670.1
+GQ422397.1	Genbank	match	1	1467	.	+	.	ID=aln0;Target=GQ422396.1 1 1467 +
+
+##sequence-region GQ422400.1 1 1467
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=663200
+GQ422400.1	Genbank	region	1	1467	.	+	.	ID=GQ422400.1:1..1467;Dbxref=taxon:663200;Name=6;collection-date=2002;country=China;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H3N2;strain=A/swine/Guangdong/113/2002
+GQ422400.1	Genbank	gene	20	1429	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ422400.1	Genbank	CDS	20	1429	.	+	0	ID=cds-ACU46671.1;Parent=gene-NA;Dbxref=NCBI_GP:ACU46671.1;Name=ACU46671.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACU46671.1
+GQ422397.1	Genbank	match	1	1467	.	+	.	ID=aln0;Target=GQ422396.1 1 1467 +
+
+##sequence-region GQ422401.1 1 1467
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=663197
+GQ422401.1	Genbank	region	1	1467	.	+	.	ID=GQ422401.1:1..1467;Dbxref=taxon:663197;Name=6;collection-date=2002;country=China;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H3N2;strain=A/swine/Guangdong/107/2002
+GQ422401.1	Genbank	gene	20	1429	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ422401.1	Genbank	CDS	20	1429	.	+	0	ID=cds-ACU46672.1;Parent=gene-NA;Dbxref=NCBI_GP:ACU46672.1;Name=ACU46672.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACU46672.1
+GQ422397.1	Genbank	match	1	1467	.	+	.	ID=aln0;Target=GQ422396.1 1 1467 +
+
+##sequence-region GQ422387.1 1 1460
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=663205
+GQ422387.1	Genbank	region	1	1460	.	+	.	ID=GQ422387.1:1..1460;Dbxref=taxon:663205;Name=6;collection-date=2002;country=China;gbkey=Src;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Guangdong/103/2002
+GQ422387.1	Genbank	gene	21	1430	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GQ422387.1	Genbank	CDS	21	1430	.	+	0	ID=cds-ACU46726.1;Parent=gene-NA;Dbxref=NCBI_GP:ACU46726.1;Name=ACU46726.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACU46726.1
+
+##sequence-region GU135975.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=686892
+GU135975.1	Genbank	region	1	1410	.	+	.	ID=GU135975.1:1..1410;Dbxref=taxon:686892;Name=6;collection-date=Oct-2003;country=USA;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Iowa/H03UWF2/2003
+GU135975.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GU135975.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ACY66989.1;Parent=gene-NA;Dbxref=NCBI_GP:ACY66989.1;Name=ACY66989.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACY66989.1
+
+##sequence-region GU135967.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=686891
+GU135967.1	Genbank	region	1	1410	.	+	.	ID=GU135967.1:1..1410;Dbxref=taxon:686891;Name=6;collection-date=Sep-2003;country=USA;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Iowa/H03US3/2003
+GU135967.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GU135967.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ACY66990.1;Parent=gene-NA;Dbxref=NCBI_GP:ACY66990.1;Name=ACY66990.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACY66990.1
+
+##sequence-region GU135959.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=686890
+GU135959.1	Genbank	region	1	1410	.	+	.	ID=GU135959.1:1..1410;Dbxref=taxon:686890;Name=6;collection-date=Jun-2003;country=USA;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Iowa/H03LS4/2003
+GU135959.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GU135959.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ACY66991.1;Parent=gene-NA;Dbxref=NCBI_GP:ACY66991.1;Name=ACY66991.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACY66991.1
+
+##sequence-region GU135951.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=686889
+GU135951.1	Genbank	region	1	1410	.	+	.	ID=GU135951.1:1..1410;Dbxref=taxon:686889;Name=6;collection-date=Dec-2003;country=USA;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Iowa/H03LJ10/2003
+GU135951.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GU135951.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ACY66992.1;Parent=gene-NA;Dbxref=NCBI_GP:ACY66992.1;Name=ACY66992.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACY66992.1
+
+##sequence-region GU135943.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=686888
+GU135943.1	Genbank	region	1	1410	.	+	.	ID=GU135943.1:1..1410;Dbxref=taxon:686888;Name=6;collection-date=Aug-2003;country=USA;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H3N2;strain=A/swine/Iowa/H03LDH5/2003
+GU135943.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GU135943.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ACY66993.1;Parent=gene-NA;Dbxref=NCBI_GP:ACY66993.1;Name=ACY66993.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACY66993.1
+
+##sequence-region GU135935.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=686887
+GU135935.1	Genbank	region	1	1410	.	+	.	ID=GU135935.1:1..1410;Dbxref=taxon:686887;Name=6;collection-date=Jun-2003;country=USA;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Iowa/H03HS5/2003
+GU135935.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GU135935.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ACY66994.1;Parent=gene-NA;Dbxref=NCBI_GP:ACY66994.1;Name=ACY66994.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACY66994.1
+
+##sequence-region GU135927.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=502056
+GU135927.1	Genbank	region	1	1410	.	+	.	ID=GU135927.1:1..1410;Dbxref=taxon:502056;Name=6;collection-date=Jun-2003;country=USA;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H3N2;strain=A/swine/Iowa/H03HO7/2003
+GU135927.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GU135927.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ACY66995.1;Parent=gene-NA;Dbxref=NCBI_GP:ACY66995.1;Name=ACY66995.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACY66995.1
+
+##sequence-region GU135920.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=686886
+GU135920.1	Genbank	region	1	1410	.	+	.	ID=GU135920.1:1..1410;Dbxref=taxon:686886;Name=6;collection-date=Feb-2003;country=USA;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H3N2;strain=A/swine/Iowa/H03HB4/2003
+GU135920.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GU135920.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ACY66996.1;Parent=gene-NA;Dbxref=NCBI_GP:ACY66996.1;Name=ACY66996.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACY66996.1
+
+##sequence-region GU135912.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=686885
+GU135912.1	Genbank	region	1	1410	.	+	.	ID=GU135912.1:1..1410;Dbxref=taxon:686885;Name=6;collection-date=Apr-2003;country=USA;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Iowa/H03G1/2003
+GU135912.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GU135912.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ACY66997.1;Parent=gene-NA;Dbxref=NCBI_GP:ACY66997.1;Name=ACY66997.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACY66997.1
+
+##sequence-region GU135900.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=502055
+GU135900.1	Genbank	region	1	1410	.	+	.	ID=GU135900.1:1..1410;Dbxref=taxon:502055;Name=6;collection-date=Nov-2002;country=USA;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H3N2;strain=A/swine/Iowa/H02AS8/2002
+GU135900.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+GU135900.1	Genbank	CDS	1	1410	.	+	0	ID=cds-ACY66999.1;Parent=gene-NA;Dbxref=NCBI_GP:ACY66999.1;Name=ACY66999.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ACY66999.1
+
+##sequence-region CY085488.1 1 1456
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991690
+CY085488.1	Genbank	region	1	1456	.	+	.	ID=CY085488.1:1..1456;Dbxref=taxon:991690;Name=6;collection-date=21-Jan-2002;country=Hong Kong;gbkey=Src;isolation-source=nasal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N2;strain=A/swine/Hong Kong/NS13/2002
+CY085488.1	Genbank	sequence_feature	1	1456	.	+	.	ID=id-CY085488.1:1..1456;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_118.6;gbkey=misc_feature
+CY085488.1	Genbank	gene	19	1428	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085488.1	Genbank	CDS	19	1428	.	+	0	ID=cds-ADY71088.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71088.1;Name=ADY71088.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71088.1
+
+##sequence-region CY085520.1 1 1456
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991642
+CY085520.1	Genbank	region	1	1456	.	+	.	ID=CY085520.1:1..1456;Dbxref=taxon:991642;Name=6;collection-date=13-Aug-2002;country=Hong Kong;gbkey=Src;isolation-source=nasal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N2;strain=A/swine/Hong Kong/NS728/2002
+CY085520.1	Genbank	sequence_feature	1	1456	.	+	.	ID=id-CY085520.1:1..1456;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_122.6;gbkey=misc_feature
+CY085520.1	Genbank	gene	19	1428	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085520.1	Genbank	CDS	19	1428	.	+	0	ID=cds-ADY71128.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71128.1;Name=ADY71128.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71128.1
+
+##sequence-region CY085528.1 1 1456
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991668
+CY085528.1	Genbank	region	1	1456	.	+	.	ID=CY085528.1:1..1456;Dbxref=taxon:991668;Name=6;collection-date=09-Sep-2002;country=Hong Kong;gbkey=Src;isolation-source=tracheal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N2;strain=A/swine/Hong Kong/1248/2002
+CY085528.1	Genbank	sequence_feature	1	1456	.	+	.	ID=id-CY085528.1:1..1456;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_123.6;gbkey=misc_feature
+CY085528.1	Genbank	gene	19	1428	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085528.1	Genbank	CDS	19	1428	.	+	0	ID=cds-ADY71138.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71138.1;Name=ADY71138.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71138.1
+
+##sequence-region CY085552.1 1 1431
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991532
+CY085552.1	Genbank	region	1	1431	.	+	.	ID=CY085552.1:1..1431;Dbxref=taxon:991532;Name=6;collection-date=06-Feb-2003;country=Hong Kong;gbkey=Src;isolation-source=nasal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Hong Kong/NS129/2003
+CY085552.1	Genbank	sequence_feature	1	1431	.	+	.	ID=id-CY085552.1:1..1431;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_126.6;gbkey=misc_feature
+CY085552.1	Genbank	gene	19	1428	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085552.1	Genbank	CDS	19	1428	.	+	0	ID=cds-ADY71170.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71170.1;Name=ADY71170.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71170.1
+
+##sequence-region CY085560.1 1 1431
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991492
+CY085560.1	Genbank	region	1	1431	.	+	.	ID=CY085560.1:1..1431;Dbxref=taxon:991492;Name=6;collection-date=09-May-2003;country=Hong Kong;gbkey=Src;isolation-source=tracheal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Hong Kong/638/2003
+CY085560.1	Genbank	sequence_feature	1	1431	.	+	.	ID=id-CY085560.1:1..1431;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_127.6;gbkey=misc_feature
+CY085560.1	Genbank	gene	19	1428	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085560.1	Genbank	CDS	19	1428	.	+	0	ID=cds-ADY71181.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71181.1;Name=ADY71181.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71181.1
+
+##sequence-region CY085576.1 1 1456
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991697
+CY085576.1	Genbank	region	1	1456	.	+	.	ID=CY085576.1:1..1456;Dbxref=taxon:991697;Name=6;collection-date=10-Jul-2003;country=Hong Kong;gbkey=Src;isolation-source=nasal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N2;strain=A/swine/Hong Kong/NS605/2003
+CY085576.1	Genbank	sequence_feature	1	1456	.	+	.	ID=id-CY085576.1:1..1456;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_129.6;gbkey=misc_feature
+CY085576.1	Genbank	gene	19	1428	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085576.1	Genbank	CDS	19	1428	.	+	0	ID=cds-ADY71203.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71203.1;Name=ADY71203.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71203.1
+
+##sequence-region CY085584.1 1 1456
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991660
+CY085584.1	Genbank	region	1	1456	.	+	.	ID=CY085584.1:1..1456;Dbxref=taxon:991660;Name=6;collection-date=14-Aug-2003;country=Hong Kong;gbkey=Src;isolation-source=tracheal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N2;strain=A/swine/Hong Kong/1102/2003
+CY085584.1	Genbank	sequence_feature	1	1456	.	+	.	ID=id-CY085584.1:1..1456;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_130.6;gbkey=misc_feature
+CY085584.1	Genbank	gene	19	1428	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085584.1	Genbank	CDS	19	1428	.	+	0	ID=cds-ADY71214.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71214.1;Name=ADY71214.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71214.1
+
+##sequence-region CY085600.1 1 1456
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991701
+CY085600.1	Genbank	region	1	1456	.	+	.	ID=CY085600.1:1..1456;Dbxref=taxon:991701;Name=6;collection-date=16-Oct-2003;country=Hong Kong;gbkey=Src;isolation-source=tracheal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N2;strain=A/swine/Hong Kong/1382/2003
+CY085600.1	Genbank	sequence_feature	1	1456	.	+	.	ID=id-CY085600.1:1..1456;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_132.6;gbkey=misc_feature
+CY085600.1	Genbank	gene	19	1428	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085600.1	Genbank	CDS	19	1428	.	+	0	ID=cds-ADY71235.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71235.1;Name=ADY71235.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71235.1
+
+##sequence-region CY085616.1 1 1456
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991722
+CY085616.1	Genbank	region	1	1456	.	+	.	ID=CY085616.1:1..1456;Dbxref=taxon:991722;Name=6;collection-date=15-Dec-2003;country=Hong Kong;gbkey=Src;isolation-source=tracheal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N2;strain=A/swine/Hong Kong/1763/2003
+CY085616.1	Genbank	sequence_feature	1	1456	.	+	.	ID=id-CY085616.1:1..1456;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_134.6;gbkey=misc_feature
+CY085616.1	Genbank	gene	19	1428	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085616.1	Genbank	CDS	19	1428	.	+	0	ID=cds-ADY71256.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71256.1;Name=ADY71256.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71256.1
+
+##sequence-region CY085680.1 1 1456
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991713
+CY085680.1	Genbank	region	1	1456	.	+	.	ID=CY085680.1:1..1456;Dbxref=taxon:991713;Name=6;collection-date=14-Oct-2004;country=Hong Kong;gbkey=Src;isolation-source=nasal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N2;strain=A/swine/Hong Kong/NS915/2004
+CY085680.1	Genbank	sequence_feature	1	1456	.	+	.	ID=id-CY085680.1:1..1456;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_142.6;gbkey=misc_feature
+CY085680.1	Genbank	gene	19	1428	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085680.1	Genbank	CDS	19	1428	.	+	0	ID=cds-ADY71341.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71341.1;Name=ADY71341.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71341.1
+
+##sequence-region CY099129.1 1 1439
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=983022
+CY099129.1	Genbank	region	1	1439	.	+	.	ID=CY099129.1:1..1439;Dbxref=taxon:983022;Name=6;bio-material=CEIRS#SG-01125#;collection-date=02-Nov-2004;country=USA: Indiana;gbkey=Src;lab-host=MDCK2 passage(s);mol_type=viral cRNA;nat-host=swine%3B age 1M;segment=6;serotype=H1N2;strain=A/swine/Indiana/00427/2004
+CY099129.1	Genbank	sequence_feature	1	1439	.	+	.	ID=id-CY099129.1:1..1439;Dbxref=IRD:NIGSP_CEIRS_UMN026_MG_00008.NA;gbkey=misc_feature
+CY099129.1	Genbank	gene	8	1417	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY099129.1	Genbank	CDS	8	1417	.	+	0	ID=cds-AEO91749.1;Parent=gene-NA;Dbxref=NCBI_GP:AEO91749.1;Name=AEO91749.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AEO91749.1
+
+##sequence-region CY099193.1 1 1417
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1073457
+CY099193.1	Genbank	region	1	1417	.	+	.	ID=CY099193.1:1..1417;Dbxref=taxon:1073457;Name=6;bio-material=CEIRS#SG-01141#;collection-date=07-Mar-2003;country=USA: Illinois;gbkey=Src;lab-host=MDCK2 passage(s);mol_type=viral cRNA;nat-host=swine%3B age 1M;segment=6;serotype=H1N1;strain=A/swine/Illinois/SG1141/2003
+CY099193.1	Genbank	sequence_feature	1	1417	.	+	.	ID=id-CY099193.1:1..1417;Dbxref=IRD:NIGSP_CEIRS_UMN026_MG_00019.NA;gbkey=misc_feature
+CY099193.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY099193.1	Genbank	CDS	1	1410	.	+	0	ID=cds-AEO91836.1;Parent=gene-NA;Dbxref=NCBI_GP:AEO91836.1;Name=AEO91836.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AEO91836.1
+
+##sequence-region CY115914.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1176094
+CY115914.1	Genbank	region	1	1410	.	+	.	ID=CY115914.1:1..1410;Dbxref=taxon:1176094;Name=6;collection-date=04-Dec-2002;country=United Kingdom: England;gbkey=Src;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N2;strain=A/swine/England/002295/2002
+CY115914.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY115914.1	Genbank	CDS	1	1410	.	+	0	ID=cds-AFR75916.1;Parent=gene-NA;Dbxref=NCBI_GP:AFR75916.1;Name=AFR75916.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AFR75916.1
+
+##sequence-region CY115929.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1176074
+CY115929.1	Genbank	region	1	1410	.	+	.	ID=CY115929.1:1..1410;Dbxref=taxon:1176074;Name=6;collection-date=11-Feb-2003;country=United Kingdom: England;gbkey=Src;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/England/010402/2003
+CY115929.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY115929.1	Genbank	CDS	1	1410	.	+	0	ID=cds-AFR75937.1;Parent=gene-NA;Dbxref=NCBI_GP:AFR75937.1;Name=AFR75937.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AFR75937.1
+
+##sequence-region CY115961.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1176070
+CY115961.1	Genbank	region	1	1410	.	+	.	ID=CY115961.1:1..1410;Dbxref=taxon:1176070;Name=6;collection-date=08-Sep-2004;country=United Kingdom: England;gbkey=Src;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/England/1131/2004
+CY115961.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY115961.1	Genbank	CDS	1	1410	.	+	0	ID=cds-AFR75980.1;Parent=gene-NA;Dbxref=NCBI_GP:AFR75980.1;Name=AFR75980.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AFR75980.1
+
+##sequence-region CY116068.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1176043
+CY116068.1	Genbank	region	1	1410	.	+	.	ID=CY116068.1:1..1410;Dbxref=taxon:1176043;Name=6;collection-date=06-Mar-2002;country=United Kingdom: England;gbkey=Src;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/England/254/2002
+CY116068.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY116068.1	Genbank	CDS	1	1410	.	+	0	ID=cds-AFR76125.1;Parent=gene-NA;Dbxref=NCBI_GP:AFR76125.1;Name=AFR76125.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AFR76125.1
+
+##sequence-region CY116358.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1176057
+CY116358.1	Genbank	region	1	1410	.	+	.	ID=CY116358.1:1..1410;Dbxref=taxon:1176057;Name=6;collection-date=2004;country=France: Finnistere;gbkey=Src;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Finnistere/800/2004
+CY116358.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY116358.1	Genbank	CDS	1	1410	.	+	0	ID=cds-AFR76518.1;Parent=gene-NA;Dbxref=NCBI_GP:AFR76518.1;Name=AFR76518.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AFR76518.1
+
+##sequence-region CY116390.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1176056
+CY116390.1	Genbank	region	1	1410	.	+	.	ID=CY116390.1:1..1410;Dbxref=taxon:1176056;Name=6;collection-date=2002;country=France: Cotes-d'Armor;gbkey=Src;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Cotes d'Armor/1624/2002
+CY116390.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY116390.1	Genbank	CDS	1	1410	.	+	0	ID=cds-AFR76562.1;Parent=gene-NA;Dbxref=NCBI_GP:AFR76562.1;Name=AFR76562.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AFR76562.1
+
+##sequence-region CY116444.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=614047
+CY116444.1	Genbank	region	1	1410	.	+	.	ID=CY116444.1:1..1410;Dbxref=taxon:614047;Name=6;collection-date=2002;country=Belgium: Gent;gbkey=Src;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N2;strain=A/swine/Gent/177/2002
+CY116444.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY116444.1	Genbank	CDS	1	1410	.	+	0	ID=cds-AFR76636.1;Parent=gene-NA;Dbxref=NCBI_GP:AFR76636.1;Name=AFR76636.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AFR76636.1
+
+##sequence-region DQ150435.2 1 1459
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=345297
+DQ150435.2	Genbank	region	1	1459	.	+	.	ID=DQ150435.2:1..1459;Dbxref=taxon:345297;country=USA;gbkey=Src;isolate=A/SW/IN/PU542/04 (H3N1);mol_type=viral cRNA;old-name=Influenza A virus (A/SW/IN/PU542/04 (H3N1));subtype=H3N1
+DQ150435.2	Genbank	gene	21	1430	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+DQ150435.2	Genbank	CDS	21	1430	.	+	0	ID=cds-ABA27442.1;Parent=gene-NA;Dbxref=NCBI_GP:ABA27442.1;Name=ABA27442.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ABA27442.1
+
+##sequence-region CY157777.1 1 1441
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1261856
+CY157777.1	Genbank	region	1	1441	.	+	.	ID=CY157777.1:1..1441;Dbxref=taxon:1261856;Name=6;collection-date=18-May-2004;country=USA: Illinois;gbkey=Src;lab-host=MDCK 1 passage(s);mol_type=viral cRNA;nat-host=swine%3B age 4W;segment=6;serotype=H3N2;strain=A/swine/Illinois/00303/2004
+CY157777.1	Genbank	sequence_feature	1	1441	.	+	.	ID=id-CY157777.1:1..1441;Dbxref=IRD:NIGSP_SD_00057.NA;gbkey=misc_feature
+CY157777.1	Genbank	gene	8	1417	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY157777.1	Genbank	CDS	8	1417	.	+	0	ID=cds-AHB20883.1;Parent=gene-NA;Dbxref=NCBI_GP:AHB20883.1;Name=AHB20883.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AHB20883.1
+
+##sequence-region CY159099.1 1 1427
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1426046
+CY159099.1	Genbank	region	1	1427	.	+	.	ID=CY159099.1:1..1427;Dbxref=taxon:1426046;Name=6;collection-date=02-Oct-2003;country=USA: Iowa;gbkey=Src;lab-host=MDCK 1 passage(s);mol_type=viral cRNA;nat-host=swine%3B age 22W;segment=6;serotype=H3N2;strain=A/swine/Iowa/00186/2003
+CY159099.1	Genbank	sequence_feature	1	1427	.	+	.	ID=id-CY159099.1:1..1427;Dbxref=IRD:NIGSP_SD_00350.NA;gbkey=misc_feature
+CY159099.1	Genbank	gene	2	1411	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY159099.1	Genbank	CDS	2	1411	.	+	0	ID=cds-AHB22570.1;Parent=gene-NA;Dbxref=NCBI_GP:AHB22570.1;Name=AHB22570.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AHB22570.1
+
+##sequence-region CY159219.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1425858
+CY159219.1	Genbank	region	1	1410	.	+	.	ID=CY159219.1:1..1410;Dbxref=taxon:1425858;Name=6;collection-date=19-Feb-2004;country=USA: Iowa;gbkey=Src;lab-host=MDCK 1 passage(s);mol_type=viral cRNA;nat-host=swine%3B age 8W;segment=6;serotype=H1N1;strain=A/swine/Iowa/00250/2004
+CY159219.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY159219.1	Genbank	CDS	1	1410	.	+	0	ID=cds-AHB22750.1;Parent=gene-NA;Dbxref=NCBI_GP:AHB22750.1;Name=AHB22750.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AHB22750.1
+CY159219.1	Genbank	sequence_feature	1	1410	.	+	.	ID=id-CY159219.1:1..1410;Dbxref=IRD:NIGSP_SD_00365.NA;gbkey=misc_feature
+
+##sequence-region CY157697.1 1 1420
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1432590
+CY157697.1	Genbank	region	1	1420	.	+	.	ID=CY157697.1:1..1420;Dbxref=taxon:1432590;Name=6;collection-date=07-Apr-2004;country=USA: Colorado;gbkey=Src;lab-host=MDCK 1 passage(s);mol_type=viral cRNA;nat-host=swine%3B age 13W;segment=6;serotype=H1N1;strain=A/swine/Colorado/SG1185/2004
+CY157697.1	Genbank	sequence_feature	1	1420	.	+	.	ID=id-CY157697.1:1..1420;Dbxref=IRD:NIGSP_SD_00029.NA;gbkey=misc_feature
+CY157697.1	Genbank	gene	6	1415	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY157697.1	Genbank	CDS	6	1415	.	+	0	ID=cds-AHB51271.1;Parent=gene-NA;Dbxref=NCBI_GP:AHB51271.1;Name=AHB51271.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AHB51271.1
+
+##sequence-region KM198692.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=468604
+KM198692.1	Genbank	region	1	1410	.	+	.	ID=KM198692.1:1..1410;Dbxref=taxon:468604;Name=6;collection-date=2004;country=USA: Iowa;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=swine;note=passage details: MDCK;segment=6;serotype=H1N1;strain=A/swine/Iowa/00239/2004
+KM198692.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+KM198692.1	Genbank	CDS	1	1410	.	+	0	ID=cds-AII31077.1;Parent=gene-NA;Dbxref=NCBI_GP:AII31077.1;Name=AII31077.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AII31077.1
+KM198692.1	Genbank	sequence_feature	1	1410	.	+	.	ID=id-KM198692.1:1..1410;Dbxref=IRD:IRD-MTRGI.6;gbkey=misc_feature
+
+##sequence-region KR700626.1 1 1410
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1654138
+KR700626.1	Genbank	region	1	1410	.	+	.	ID=KR700626.1:1..1410;Dbxref=taxon:1654138;Name=6;collection-date=01-Nov-2004;country=United Kingdom;gbkey=Src;genome=genomic;mol_type=viral cRNA;nat-host=Sus scrofa;segment=6;serotype=H1N2;strain=A/swine/England/1437/2004
+KR700626.1	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+KR700626.1	Genbank	CDS	1	1410	.	+	0	ID=cds-AKJ81807.1;Parent=gene-NA;Dbxref=NCBI_GP:AKJ81807.1;Name=AKJ81807.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=AKJ81807.1
+
+##sequence-region CY085496.2 1 1412
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991281
+CY085496.2	Genbank	region	1	1412	.	+	.	ID=CY085496.2:1..1412;Dbxref=taxon:991281;Name=6;collection-date=19-Feb-2002;country=Hong Kong;gbkey=Src;isolation-source=tracheal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Hong Kong/227/2002
+CY085496.2	Genbank	sequence_feature	1	1412	.	+	.	ID=id-CY085496.2:1..1412;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_119.6;gbkey=misc_feature
+CY085496.2	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085496.2	Genbank	CDS	1	1410	.	+	0	ID=cds-ADY71098.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71098.1;Name=ADY71098.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71098.1
+
+##sequence-region CY085504.2 1 1412
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=991282
+CY085504.2	Genbank	region	1	1412	.	+	.	ID=CY085504.2:1..1412;Dbxref=taxon:991282;Name=6;collection-date=24-May-2002;country=Hong Kong;gbkey=Src;isolation-source=tracheal swab;mol_type=viral cRNA;nat-host=swine;segment=6;serotype=H1N1;strain=A/swine/Hong Kong/752/2002
+CY085504.2	Genbank	sequence_feature	1	1412	.	+	.	ID=id-CY085504.2:1..1412;Dbxref=IRD:CEIRS-SJC002-SKLEID_FG_120.6;gbkey=misc_feature
+CY085504.2	Genbank	gene	1	1410	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+CY085504.2	Genbank	CDS	1	1410	.	+	0	ID=cds-ADY71108.1;Parent=gene-NA;Dbxref=NCBI_GP:ADY71108.1;Name=ADY71108.1;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=ADY71108.1
+
+##sequence-region AB571805.2 1 1467
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=864457
+AB571805.2	DDBJ	region	1	1467	.	+	.	ID=AB571805.2:1..1467;Dbxref=taxon:864457;country=Thailand:Chachoengsao;gbkey=Src;mol_type=viral cRNA;serotype=H3N2;strain=A/swine/Chachoengsao/2002
+AB571805.2	DDBJ	gene	20	1429	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+AB571805.2	DDBJ	CDS	20	1429	.	+	0	ID=cds-BAJ11774.2;Parent=gene-NA;Dbxref=NCBI_GP:BAJ11774.2;Name=BAJ11774.2;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=BAJ11774.2
+
+##sequence-region AB573015.2 1 1467
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=868562
+AB573015.2	DDBJ	region	1	1467	.	+	.	ID=AB573015.2:1..1467;Dbxref=taxon:868562;country=Thailand:Chonburi;gbkey=Src;mol_type=viral cRNA;serotype=H3N2;strain=A/swine/Chonburi/2002
+AB573015.2	DDBJ	gene	20	1429	.	+	.	ID=gene-NA;Name=NA;gbkey=Gene;gene=NA;gene_biotype=protein_coding
+AB573015.2	DDBJ	CDS	20	1429	.	+	0	ID=cds-BAJ12105.2;Parent=gene-NA;Dbxref=NCBI_GP:BAJ12105.2;Name=BAJ12105.2;gbkey=CDS;gene=NA;product=neuraminidase;protein_id=BAJ12105.2
+
