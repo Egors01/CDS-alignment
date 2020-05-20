@@ -1,0 +1,5 @@
+input_files	output_files	alignment_type
+/home/egors/Projects/CDS-alignment/swine_demo/align.swine_input.parts/five_utr.fasta	/home/egors/Projects/CDS-alignment/swine_demo/align.swine_input.parts/five_utr.fasta_al	nuc
+/home/egors/Projects/CDS-alignment/swine_demo/align.swine_input.parts/cds_translated.fasta	/home/egors/Projects/CDS-alignment/swine_demo/align.swine_input.parts/cds_translated.fasta_al	aa
+/home/egors/Projects/CDS-alignment/swine_demo/align.swine_input.parts/three_utr.fasta	/home/egors/Projects/CDS-alignment/swine_demo/align.swine_input.parts/three_utr.fasta_al	nuc
+/home/egors/Projects/CDS-alignment/swine_demo/align.swine_input.parts/cds_nucleotide.fasta	/home/egors/Projects/CDS-alignment/swine_demo/align.swine_input.parts/cds_nucleotide.fasta_al	nuc_cds
