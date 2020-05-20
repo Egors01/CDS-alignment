@@ -12,7 +12,7 @@ def rename_headers(input_file ,output_file,index_file):
         record.name = ''
         new_records.append(record)
     df = pd.DataFrame.from_dict(new_id_to_old,orient='index')
-    df.to_csv(index_file,header=None,sep='\t')
+    df.to_csv(index_file,header=False,sep='\t')
     with open(output_file,'w') as handle:
         SeqIO.write(new_records,handle,format='fasta')
 if __name__ == '__main__':
