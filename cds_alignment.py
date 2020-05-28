@@ -27,7 +27,7 @@ class CdsAlignment():
 
         # save its record order
         self.records_order = [record.id for record in self.fasta_list]
-
+        self.n_sequences = len(self.records_order)
         # read annotation
         self.annotation = pd.read_csv(annotation_table, sep='\t', header=None, usecols=[0, 1, 2],
                                       names=['alignment_id', 'start', 'end'])
@@ -237,20 +237,21 @@ class CdsAlignment():
         if self.n_partitions == 3:
             alignment_types = ['nuc', 'aa', 'nuc', 'nuc_cds']
             files = [os.path.join(self.tmp_dir, file) for file in self.split_filenames]
-            lists = [self.five_primes_list, self.cds_aa_list, self.five_primes_list, self.cds_nuc_list]
+            lists = [self.five_primes_list, self.cds_aa_list, self.three_primes_list, self.cds_nuc_list]
         else:
-            # plug to process multiple cds split
+            # catch unwritten processing of multiple cds split
             raise RuntimeError('Should not be here')
             pass
 
+        n_sequences_in_partition = {}
         # saving
         for file, fasta_list, aln_type in zip(files, lists, alignment_types):
             self.splittted_files_types[file] = aln_type
+            n_sequences_in_partition[file] = len(fasta_list)
             with open(file, 'w') as handle:
                 SeqIO.write(fasta_list, handle, 'fasta')
 
         # save empty ends
-        df_empty_ends = pd.DataFrame(self.five_primes_empty)
         f = open(self.empty_ends_file_five, 'w')
         for x in self.five_primes_empty:
             f.write('{}\n'.format(x))
@@ -263,9 +264,16 @@ class CdsAlignment():
         # save input-output files names for alignment outside
         df_in = pd.DataFrame.from_dict(self.splittted_files_types, orient='index').reset_index()
         df_in.columns = ['input_files', 'alignment_type']
-        df_in['output_files'] = df_in['input_files'].str.replace('.fasta', '') + '.fasta_al'
-        self.alignnments_input_output_df = df_in[['input_files', 'output_files', 'alignment_type']]
+        df_in['output_files'] = df_in['input_files'].str.replace('.fasta', '').str.replace('.fa', '') + '.fasta_al'
+        df_in['n_sequences'] = pd.Series([n_sequences_in_partition[inpf] for inpf in df_in['input_files'].values.tolist()])
+
+        self.alignnments_input_output_df = df_in[['input_files', 'output_files', 'alignment_type','n_sequences']]
         self.alignnments_input_output_df.to_csv(self.alignnments_input_output_file, sep='\t', index=False)
+
+        # create emtpy output files (to simplify processing content-empty partitions)
+        for empty_output_file in  df_in['output_files'].values.tolist():
+            f = open(empty_output_file, 'w')
+            f.close()
         print()
 
     def align(self):
@@ -274,15 +282,19 @@ class CdsAlignment():
             input = row['input_files']
             output = row['output_files']
             aln_type = row['alignment_type']
-            cline = 'NONE'
-            if aln_type == 'aa':
+            cline = ''
+            require_alignment = bool(row['n_sequences']>0)
+            if aln_type == 'aa' and require_alignment:
                 cline = 'clustalo -i {input} -o {out}  --threads 2 -v --force --seqtype protein'.format(input=input,
                                                                                                         out=output)
-            if aln_type == 'nuc' or aln_type == 'nuc_cds':
+            elif (aln_type == 'nuc' or aln_type == 'nuc_cds') and require_alignment:
                 cline = 'clustalo -i {input} -o {out}  --threads 2 -v --force --seqtype DNA'.format(input=input,
-                                                                                                    out=output)
+                                                                                                   out=output)
             print(cline)
-            subprocess.run(cline, shell=True)
+            return_code = subprocess.run(cline, shell=True).returncode
+            if return_code!=0:
+                raise RuntimeError('Alignment program had non-zero return code for run\n\t {}'.format(cline))
+
         return
 
     def restore_translated(self):
@@ -321,7 +333,6 @@ class CdsAlignment():
         print('INFO:\tRestored nucleotide seqeunce from protein alignment for CDS ')
 
         return
-
     def restore_aligned_partitions(self):
         algfilenames = \
             self.alignnments_input_output_df.loc[self.alignnments_input_output_df['alignment_type'] == 'nuc'][
@@ -332,11 +343,19 @@ class CdsAlignment():
         fasta_fives = dict(SeqIO.index(five_utr_file, format='fasta'))
         fasta_threes = dict(SeqIO.index(three_utr_file, format='fasta'))
         fasta_cds_aln = {record.id: record for record in self.restored_cds_aligned}
+        len_five_al = len(fasta_fives.get(list(fasta_fives)[0]).seq)
 
         # create mock deletion sequnces taht will stand for missing 5 and 3 UTR
-        mock_three_seq = '-' * len(fasta_threes[list(fasta_threes.keys())[
-            0]].seq)  # this ugly only to take random item and get alignment length
-        mock_five_seq = '-' * len(fasta_fives[list(fasta_fives.keys())[0]].seq)
+        if not fasta_threes.__len__()==0:
+            mock_three_seq = '-' * len(fasta_threes.get(list(fasta_threes)[0]).seq)
+        else:
+            mock_three_seq = ''
+        if not fasta_fives.__len__()==0:
+            mock_five_seq = '-' * len(fasta_fives[list(fasta_fives.keys())[0]].seq)
+        else:
+            mock_five_seq = ''
+
+
         concatenated_fasta_list = []
 
         # adding mock sequences to 5 and 3 ends
@@ -349,6 +368,14 @@ class CdsAlignment():
         for fasta_id in self.records_order:
             new_seq = fasta_fives[fasta_id].seq + fasta_cds_aln[fasta_id].seq + fasta_threes[fasta_id].seq
             concatenated_fasta_list.append(SeqRecord(seq=new_seq, id=fasta_id, description='', name=''))
+
+        # check if the original equals ungapped final
+        for i, fasta_id in enumerate(self.records_order):
+            if self.fasta_list[i].seq != concatenated_fasta_list[i].seq.ungap('-'):
+                raise LookupError(
+                    'Restoring process failed. record {} with index {}: input and ungapped output doesnot match'.format(
+                        fasta_id, i))
+
         # save concatenated result
 
         with open(self.final_alignment_file, 'w') as handle:

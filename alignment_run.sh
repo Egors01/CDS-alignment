@@ -1,15 +1,15 @@
 
 # input from raw gb batch download
-file_gff3=/home/egors/Projects/CDS-alignment/swine_demo/swine_annot.gff3
-genbank_fasta=/home/egors/Projects/CDS-alignment/swine_demo/swine_seq.fasta
+file_gff3=./swine_demo/swine_annot.gff3
+genbank_fasta=./swine_demo/swine_seq.fasta
 # output
 out_result=swine_demo/final_alignment.fa
 
 # intermediate files for cleaning the raw
-filebed_out=/home/egors/Projects/CDS-alignment/swine_demo/swine_annot_bed
-annot_file_name=/home/egors/Projects/CDS-alignment/swine_demo/annot_cds.tsv
-cleaned_fasta=/home/egors/Projects/CDS-alignment/swine_demo/swine_input.fasta
-saved_fastaheaders=/home/egors/Projects/CDS-alignment/swine_demo/swine_names_index.tsv
+filebed_out=./swine_demo/swine_annot_bed
+annot_file_name=./swine_demo/annot_cds.tsv
+cleaned_fasta=./swine_demo/swine_input.fasta
+saved_fastaheaders=./swine_demo/swine_names_index.tsv
 
 
 # clean fasta headers
@@ -19,6 +19,7 @@ gff2bed --do-not-sort < $file_gff3 > $filebed_out
 python ./create_cds_annotation_table_from_gff.py -b $filebed_out -o $annot_file_name
 
 # stop and show input here
+echo ./cds_alignment.py -f $cleaned_fasta -a $annot_file_name --out $out_result --align
 python ./cds_alignment.py -f $cleaned_fasta -a $annot_file_name --out $out_result --align
 
 # restore after external align
