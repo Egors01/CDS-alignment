@@ -343,7 +343,7 @@ class CdsAlignment():
         fasta_fives = dict(SeqIO.index(five_utr_file, format='fasta'))
         fasta_threes = dict(SeqIO.index(three_utr_file, format='fasta'))
         fasta_cds_aln = {record.id: record for record in self.restored_cds_aligned}
-        len_five_al = len(fasta_fives.get(list(fasta_fives)[0]).seq)
+
 
         # create mock deletion sequnces taht will stand for missing 5 and 3 UTR
         if not fasta_threes.__len__()==0:
