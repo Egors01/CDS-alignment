@@ -218,6 +218,10 @@ class CdsAlignment():
             orf_nuc_seq = SeqRecord(seq=record.seq[start:end], id=record.id, name='', description='')
             if (orf_aa_seq.seq[0] == 'M' and orf_aa_seq.seq[-1] == '*') and str(orf_aa_seq.seq).count('*') == 1:
                 pass
+            elif orf_nuc_seq[0:3] =='GUG' or orf_nuc_seq[0:3]=='UUG'Ж
+                #Bacterial
+
+            #AUA and AUU
             # TODO Add codon options and exclusion of non-start
             # if exlude then continure without appending and change self.records_order and n_sequences
             else:
