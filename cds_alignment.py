@@ -389,9 +389,18 @@ class CdsAlignment():
                         fasta_id, i))
 
         # save concatenated result
+        # write formatted fasta output
+        handle = open(self.final_alignment_file, 'w')
+        for fasta_rec in concatenated_fasta_list:
+            lines = []
+            for i in range(0, len(fasta_rec.seq), 60):
+                lines.append(str(fasta_rec.seq[i: i + 60] + "\n"))
+            name = '>' + fasta_rec.description.strip() + '\n'
+            handle.write(name)
+            handle.write("".join(lines))
+            handle.write('\n')
+        handle.close()
 
-        with open(self.final_alignment_file, 'w') as handle:
-            SeqIO.write(concatenated_fasta_list, handle, 'fasta')
 
 
 # input_file = '/home/egors/Projects/CDS-alignment/genbank_sample_data/segment2.fasta'
