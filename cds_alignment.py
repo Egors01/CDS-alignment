@@ -25,9 +25,12 @@ class CdsAlignment():
         self.fasta_list = list(SeqIO.parse(fasta_file, format='fasta'))
         # self.fasta_list = sorted(self.fasta_list,key= lambda record:record.id)
 
-        # save its record order
-        self.records_order = [record.id for record in self.fasta_list]
-        self.n_sequences = len(self.records_order)
+        # save its record order and full descriptions
+        self.fasta_list_records_id_ordered = [record.id for record in self.fasta_list]
+        self.fasta_list_full_descriptions_from_id = {record.id:record.description for record in self.fasta_list}
+        self.n_sequences = len(self.fasta_list_records_id_ordered)
+
+
         # read annotation
         self.annotation = pd.read_csv(annotation_table, sep='\t', header=None, usecols=[0, 1, 2],
                                       names=['alignment_id', 'start', 'end'])
@@ -64,12 +67,14 @@ class CdsAlignment():
                 raise LookupError('Confusing argument. Allowed: One of only-restore or do-align should be False')
 
     def init_folders(self):
-        fasta_file_short_name = os.path.basename(self.fasta_file).replace('.fasta', '')
+        fasta_file_short_name = os.path.basename(self.fasta_file).replace('.fa', '').replace('.fasta', '')
 
         self.working_dir = os.path.dirname(self.fasta_file)
         self.tmp_dir = os.path.join(self.working_dir, 'align.{}.parts'.format(fasta_file_short_name))
+
         if not os.path.exists(self.tmp_dir):
             os.makedirs(self.tmp_dir)
+
         self.split_analysis_file = os.path.join(self.tmp_dir, 'applied_orf_splitting.tsv')
         self.alignnments_input_output_file = os.path.join(self.tmp_dir, 'files_list.tsv')
         self.empty_ends_file_five = os.path.join(self.tmp_dir, '5_UTR_emtpy_ends')
@@ -193,6 +198,7 @@ class CdsAlignment():
         # segment_transcripts.append(spliced_transcript)
 
     def split_to_three_partitions(self):
+
         # check if partitioning is okay
         for record in self.fasta_list:
             if record.id not in self.transcript_partitioning:
@@ -212,6 +218,8 @@ class CdsAlignment():
             orf_nuc_seq = SeqRecord(seq=record.seq[start:end], id=record.id, name='', description='')
             if (orf_aa_seq.seq[0] == 'M' and orf_aa_seq.seq[-1] == '*') and str(orf_aa_seq.seq).count('*') == 1:
                 pass
+            # TODO Add codon options and exclusion of non-start
+            # if exlude then continure without appending and change self.records_order and n_sequences
             else:
                 text = 'Incorrect protein translation for {}. Expected it to be M->* AA sequence\n{}\n{}'.format(record.id,orf_nuc_seq,orf_aa_seq)
                 raise RuntimeError(text)
@@ -244,6 +252,7 @@ class CdsAlignment():
             pass
 
         n_sequences_in_partition = {}
+
         # saving
         for file, fasta_list, aln_type in zip(files, lists, alignment_types):
             self.splittted_files_types[file] = aln_type
@@ -333,6 +342,7 @@ class CdsAlignment():
         print('INFO:\tRestored nucleotide seqeunce from protein alignment for CDS ')
 
         return
+
     def restore_aligned_partitions(self):
         algfilenames = \
             self.alignnments_input_output_df.loc[self.alignnments_input_output_df['alignment_type'] == 'nuc'][
@@ -359,18 +369,20 @@ class CdsAlignment():
         concatenated_fasta_list = []
 
         # adding mock sequences to 5 and 3 ends
-        for missing_id in self.records_order:
+        for missing_id in self.fasta_list_records_id_ordered:
             if missing_id not in fasta_threes.keys():  # extra check
                 fasta_threes[missing_id] = SeqRecord(seq=mock_three_seq, id=missing_id)
             if missing_id not in fasta_fives.keys():
                 fasta_fives[missing_id] = SeqRecord(seq=mock_five_seq, id=missing_id)
 
-        for fasta_id in self.records_order:
+        # creating new list with concatenated aligned parts
+        for fasta_id in self.fasta_list_records_id_ordered:
             new_seq = fasta_fives[fasta_id].seq + fasta_cds_aln[fasta_id].seq + fasta_threes[fasta_id].seq
-            concatenated_fasta_list.append(SeqRecord(seq=new_seq, id=fasta_id, description='', name=''))
+            description = self.fasta_list_full_descriptions_from_id[fasta_id]
+            concatenated_fasta_list.append(SeqRecord(seq=new_seq, id='', description=description, name=''))
 
         # check if the original equals ungapped final
-        for i, fasta_id in enumerate(self.records_order):
+        for i, fasta_id in enumerate(self.fasta_list_records_id_ordered):
             if self.fasta_list[i].seq != concatenated_fasta_list[i].seq.ungap('-'):
                 raise LookupError(
                     'Restoring process failed. record {} with index {}: input and ungapped output doesnot match'.format(
