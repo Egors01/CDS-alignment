@@ -66,7 +66,7 @@ class CdsAlignment():
             raise LookupError('Confusing argument. Allowed: One of only-restore or do-align should be False')
 
     def init_folders(self):
-        fasta_file_short_name = os.path.basename(self.fasta_file).replace('.fa', '').replace('.fasta', '')
+        fasta_file_short_name = os.path.basename(self.fasta_file).split('.')[0]
 
         self.working_dir = os.path.dirname(self.fasta_file)
         self.tmp_dir = os.path.join(self.working_dir, 'align.{}.parts'.format(fasta_file_short_name))
@@ -79,7 +79,6 @@ class CdsAlignment():
         self.empty_ends_file_five = os.path.join(self.tmp_dir, '5_UTR_emtpy_ends')
         self.empty_ends_file_three = os.path.join(self.tmp_dir, '3_UTR_emtpy_ends')
         self.restored_cds_fasta_file = os.path.join(self.tmp_dir, 'cds_nucleotde_restored.fasta_al')
-
         self.split_filenames = ['five_utr.fasta', 'cds_translated.fasta', 'three_utr.fasta', 'cds_nucleotide.fasta']
 
     def init_empty_variables(self):
@@ -102,7 +101,7 @@ class CdsAlignment():
             self.transcript_partitioning[record.id] = []
             transcript_df = self.annotation.loc[self.annotation['alignment_id'] == record.id]
 
-            partition_start = transcript_df.iloc[0]['start']
+            partition_start = transcript_df.iloc[0]['start']-1
             partition_end = transcript_df.iloc[0]['end']
 
             for index, row in transcript_df.iterrows():
@@ -115,26 +114,10 @@ class CdsAlignment():
                     splits_per_record[record.id] = len(self.transcript_partitioning[record.id]) * 2 + 1
                     break
                 else:
-                    # FInding optimal partitioning for complex ORF structure
-                    # if we already captured cds in partition
-                    if (cds_start >= partition_start) and (cds_end <= partition_end):
-                        pass
-                    else:
-                        # extend right
-                        if cds_start >= partition_start and (cds_end >= partition_end) and cds_start < partition_end:
-                            partition_end = cds_end
-                        if cds_start < partition_start and (cds_end <= partition_end):
-                            partition_start = cds_start
-
-                        # if the start and end of new cds is
-                        # downstream the end of current partition we make new partition for this cds
-                        if (cds_start > partition_end) and (cds_end > partition_end):
-                            self.transcript_partitioning[record.id].append([partition_start, partition_end])
-                            partition_start = cds_start
-                            partition_end = cds_end
-                            # print('suggesting new partition for cds {} record id {}'.format(cds_name,record.id))
+                    logger.error('Plug for complex partitioning. Should not be here')
                 self.transcript_partitioning[record.id].append([partition_start, partition_end])
                 splits_per_record[record.id] = len(self.transcript_partitioning[record.id]) * 2 + 1
+
         # complete partitioning with five and three UTR
         for record in self.fasta_list:
             seq_len = len(record.seq)
@@ -152,15 +135,8 @@ class CdsAlignment():
         # Set n_partitions
         if self.force_three_partitions:
             self.n_partitions = 3
-
         else:
-            # apply partitioning based on cds mapping
-            self.n_partitions = max(suggested_splits.items(), key=operator.itemgetter(1))[0]
-            logger.info(
-                'Suggested splits based on povided annotation <n_splits>:<count>\n\tids and count are in{}'.format(
-                    self.split_analysis_file))
-            for key, value in suggested_splits.items():
-                logger.info('{}:{}'.format(key, value + 2))
+            logger.error('Plug for complex partitioning. Should not be here')
 
         logger.info('Partitioning complete')
 
@@ -179,7 +155,10 @@ class CdsAlignment():
             raise ValueError()
 
         # spliting into three parts
+
         ids_to_drop_from_input = []
+        bad_sequences_list_aa = {}
+        bad_sequences_list = {}
         for record in self.fasta_list:
             [start, end] = self.transcript_partitioning[record.id][1]
             five_seq = SeqRecord(seq=record.seq[:start], id=record.id, name='', description='')
@@ -194,9 +173,14 @@ class CdsAlignment():
 
             else:
                 logger.warning(
-                    'CDS does not end with stop codon or multiple stop codon encountered.\n Sequence id {}\n Sequence will be dropped'.format(
+                    'Sequence id {} . CDS does not end with stop codon or multiple stop codon encountered'.format(
+                        record.id))
+                logger.warning(
+                    'Sequence id {} will be dropped from alignment'.format(
                         record.id))
                 ids_to_drop_from_input.append(record.id)
+                bad_sequences_list_aa[record.id] = orf_aa_seq
+                bad_sequences_list[record.id] = orf_nuc_seq
 
             # check start codon                                                                                      orf_aa_seq.seq),RuntimeWarning,stacklevel=2)
             if orf_aa_seq.seq[0] == 'M' and orf_aa_seq.seq[-1] == '*':
@@ -206,14 +190,17 @@ class CdsAlignment():
                     orf_mrna[0:3] == 'AUU' or \
                     orf_mrna[0:3] == 'AUA':
                 logger.warning(
-                    'The start codon for sequence id {} is not AUG. Encountered start codon {} '.format(record.id,
-                                                                                                        orf_mrna[0:3]))
+                    'Sequence id {} .A start codon for is not AUG. Encountered alternative start codon {} '.format(record.id))
+                 #Alternative codons could be GUG | UUG | AUU | AUA start codons                                                                                       orf_mrna[0:3]))
             else:
-                text = 'Incorrect protein translation for {}. Expected it to be M->* AA sequence or with alternative GUG | UUG | AUU | AUA start codons'.format(
-                    record.id)
-                logger.warning(text)
+                logger.warning('Sequence id {} Incorrect protein translation. Encounered {} start codon'.format(
+                    record.id,orf_mrna[0:3]))
+                logger.warning(
+                    'Sequence id {} will be dropped from alignment'.format(
+                        record.id))
                 ids_to_drop_from_input.append(record.id)
-
+                bad_sequences_list_aa[record.id] = orf_aa_seq
+                bad_sequences_list[record.id] = orf_nuc_seq
                 # go to the next record
                 continue
 
@@ -233,14 +220,27 @@ class CdsAlignment():
                 self.three_primes_empty.append(record.id)
 
         # drop the ignored sequences from the input info lists (they are already not appended to alignments)
+        # save ignored for inspection
+
+        ids_to_drop_from_input = set(ids_to_drop_from_input)
+        if ids_to_drop_from_input:
+            logger.info('Ignored sequences {}'.format(ids_to_drop_from_input))
+            bad_aa_file = os.path.join(self.tmp_dir, 'ignored_aa_cds.fa')
+            bad_nuc_file = os.path.join(self.tmp_dir, 'ignored_cds.fa')
+            with open(bad_aa_file,'w') as handle:
+                SeqIO.write(bad_sequences_list_aa.values(),handle,'fasta')
+
+            with open(bad_nuc_file,'w') as handle:
+                SeqIO.write(bad_sequences_list.values(),handle,'fasta')
 
         self.fasta_list = [record for record in self.fasta_list if
-                           record.id not in set(ids_to_drop_from_input)]
+                           record.id not in ids_to_drop_from_input]
 
         self.fasta_list_records_id_ordered = [record_id for record_id in self.fasta_list_records_id_ordered if
-                                              record_id not in set(ids_to_drop_from_input)]
+                                              record_id not in ids_to_drop_from_input]
         self.n_sequences = len(self.fasta_list_records_id_ordered)
-        logger.info('Ingnored sequences {}'.format(set(ids_to_drop_from_input)))
+
+
 
         return
 
