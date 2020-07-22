@@ -1,5 +1,0 @@
-input_files	output_files	alignment_type	n_sequences
-./sabine_test/align.test_input.parts/five_utr.fasta	./sabine_test/align.test_input.parts/five_utr.fasta_al	nuc	10
-./sabine_test/align.test_input.parts/cds_translated.fasta	./sabine_test/align.test_input.parts/cds_translated.fasta_al	aa	10
-./sabine_test/align.test_input.parts/three_utr.fasta	./sabine_test/align.test_input.parts/three_utr.fasta_al	nuc	0
-./sabine_test/align.test_input.parts/cds_nucleotide.fasta	./sabine_test/align.test_input.parts/cds_nucleotide.fasta_al	nuc_cds	10

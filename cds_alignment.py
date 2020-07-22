@@ -1,9 +1,10 @@
 import argparse
+import logging
 import operator
 import os
 import subprocess
 from collections import Counter
-
+import warnings
 import pandas as pd
 from Bio import SeqIO
 
@@ -23,13 +24,11 @@ class CdsAlignment():
 
         # Read fasta
         self.fasta_list = list(SeqIO.parse(fasta_file, format='fasta'))
-        # self.fasta_list = sorted(self.fasta_list,key= lambda record:record.id)
 
         # save its record order and full descriptions
         self.fasta_list_records_id_ordered = [record.id for record in self.fasta_list]
-        self.fasta_list_full_descriptions_from_id = {record.id:record.description for record in self.fasta_list}
+        self.fasta_list_full_descriptions_from_id = {record.id: record.description for record in self.fasta_list}
         self.n_sequences = len(self.fasta_list_records_id_ordered)
-
 
         # read annotation
         self.annotation = pd.read_csv(annotation_table, sep='\t', header=None, usecols=[0, 1, 2],
@@ -43,7 +42,6 @@ class CdsAlignment():
                 raise ValueError(
                     'There is no record in CDS annotation that match the >{} fasta header'.format(record.id))
 
-
         # Start partitioning
 
         self.force_three_partitions = force_three_partitions
@@ -51,20 +49,21 @@ class CdsAlignment():
         # EXECUTION
         # print('INFO:\tUsing 5-UTR CDS 3-UTR partitioning')
         self.run_partitioning()
-        self.split_to_three_partitions()
+        self.apply_split_to_three_partitions()
         self.save_files_to_align()
         if do_align and not only_restore:
             # go the full procedure if we do alignment
-            print('INFO:\tRunning alignment...')
+            logger.info('Running alignment...')
+            # print('INFO:\tRunning alignment...')
             self.align()
             self.restore_translated()
             self.restore_aligned_partitions()
         elif only_restore:
-            print('INFO:\tLooking for pre-existing alignment <names>.fasta_al')
+            logger.info('Looking for pre-existing alignment <names>.fasta_al')
             self.restore_translated()
             self.restore_aligned_partitions()
         elif do_align and only_restore:
-                raise LookupError('Confusing argument. Allowed: One of only-restore or do-align should be False')
+            raise LookupError('Confusing argument. Allowed: One of only-restore or do-align should be False')
 
     def init_folders(self):
         fasta_file_short_name = os.path.basename(self.fasta_file).replace('.fa', '').replace('.fasta', '')
@@ -123,9 +122,7 @@ class CdsAlignment():
                     else:
                         # extend right
                         if cds_start >= partition_start and (cds_end >= partition_end) and cds_start < partition_end:
-                            # print('extended right [{}:{}]->[{}:{}]'.format(partition_start,partition_end,partition_start,cds_end))
                             partition_end = cds_end
-                        # extend left (for the case when annotation is not sorted)
                         if cds_start < partition_start and (cds_end <= partition_end):
                             partition_start = cds_start
 
@@ -159,87 +156,91 @@ class CdsAlignment():
         else:
             # apply partitioning based on cds mapping
             self.n_partitions = max(suggested_splits.items(), key=operator.itemgetter(1))[0]
-            print(
-                'INFO:\tSuggested splits based on povided annotation <n_splits>:<count>\n\tids and count are in{}'.format(
+            logger.info(
+                'Suggested splits based on povided annotation <n_splits>:<count>\n\tids and count are in{}'.format(
                     self.split_analysis_file))
             for key, value in suggested_splits.items():
-                print('    \t{}:{}'.format(key, value + 2))
+                logger.info('{}:{}'.format(key, value + 2))
 
-        print('INFO:\t Partitioning complete')
+        logger.info('Partitioning complete')
 
-        # for seq_id,coords in self.partitioning.items():
-        #     print(seq_id,coords)
-        #
-        # words = ['a', 'b', 'c', 'a']
-        # spliced_transcript = ''
-        # exon_fragment = ['0' for x in record_seq]
-        #
-        # cds_nucleotide_counter = 0
-        #
-        # # iterate over all CDS for isoform
-        # for index, row in transcript_df.iterrows():
-        #     start = row['start']
-        #     end = row['end']
-        #     print('INFO:\tReading fragment CDS {}\t [{}:{}] '.format(annot, start, end))
-        #
-        #     for x in range(start, end):
-        #         exon_fragment[x] = labels[cds_nucleotide_counter]
-        #         # print(x,record_seq[x],astr[x],cds_nucleotide_counter)
-        #
-        #         # get position withon codon
-        #         cds_nucleotide_counter += 1
-        #         if cds_nucleotide_counter > 2:
-        #             cds_nucleotide_counter = 0
-        #
-        #             # append current CDS fragment to spliced isoform
-        #     spliced_transcript += record_seq[start:end]
-        #
-        # annotated_transcripts.append(''.join(exon_fragment))
-        # segment_transcripts.append(spliced_transcript)
-
-    def split_to_three_partitions(self):
+    def apply_split_to_three_partitions(self):
 
         # check if partitioning is okay
         for record in self.fasta_list:
             if record.id not in self.transcript_partitioning:
-                raise ValueError('There is no header >{} in partitioning record'.format(record))
+                logger.error('There is no header >{} in partitioning record'.format(record))
+                raise ValueError()
         if self.n_partitions == 3:
             pass
         else:
-            raise ValueError('Three (3) partitions for the split selected. However there is {} in the split.'.format(
+            logger.error('Three (3) partitions for the split selected. However there is {} in the split.'.format(
                 self.n_partitions))
+            raise ValueError()
 
         # spliting into three parts
+        ids_to_drop_from_input = []
         for record in self.fasta_list:
             [start, end] = self.transcript_partitioning[record.id][1]
             five_seq = SeqRecord(seq=record.seq[:start], id=record.id, name='', description='')
             orf_aa_seq = SeqRecord(seq=record.seq[start:end].translate(), id=record.id, name='', description='')
             three_seq = SeqRecord(seq=record.seq[end:], id=record.id, name='', description='')
             orf_nuc_seq = SeqRecord(seq=record.seq[start:end], id=record.id, name='', description='')
-            if (orf_aa_seq.seq[0] == 'M' and orf_aa_seq.seq[-1] == '*') and str(orf_aa_seq.seq).count('*') == 1:
-                pass
-            elif orf_nuc_seq[0:3] =='GUG' or orf_nuc_seq[0:3]=='UUG'Ж
-                #Bacterial
+            orf_mrna = str(orf_nuc_seq.seq).replace('T', 'U')
 
-            #AUA and AUU
-            # TODO Add codon options and exclusion of non-start
-            # if exlude then continure without appending and change self.records_order and n_sequences
+            # check if only one stop is present and if CDS ends with stop
+            if orf_aa_seq.seq[-1] == '*' and str(orf_aa_seq.seq).count('*') == 1:
+                pass
+
             else:
-                text = 'Incorrect protein translation for {}. Expected it to be M->* AA sequence\n{}\n{}'.format(record.id,orf_nuc_seq,orf_aa_seq)
-                raise RuntimeError(text)
+                logger.warning(
+                    'CDS does not end with stop codon or multiple stop codon encountered.\n Sequence id {}\n Sequence will be dropped'.format(
+                        record.id))
+                ids_to_drop_from_input.append(record.id)
+
+            # check start codon                                                                                      orf_aa_seq.seq),RuntimeWarning,stacklevel=2)
+            if orf_aa_seq.seq[0] == 'M' and orf_aa_seq.seq[-1] == '*':
+                pass
+            elif orf_mrna[0:3] == 'GUG' or \
+                    orf_mrna[0:3] == 'UUG' or \
+                    orf_mrna[0:3] == 'AUU' or \
+                    orf_mrna[0:3] == 'AUA':
+                logger.warning(
+                    'The start codon for sequence id {} is not AUG. Encountered start codon {} '.format(record.id,
+                                                                                                        orf_mrna[0:3]))
+            else:
+                text = 'Incorrect protein translation for {}. Expected it to be M->* AA sequence or with alternative GUG | UUG | AUU | AUA start codons'.format(
+                    record.id)
+                logger.warning(text)
+                ids_to_drop_from_input.append(record.id)
+
+                # go to the next record
+                continue
+
             self.cds_aa_list.append(orf_aa_seq)
             self.cds_nuc_list.append(orf_nuc_seq)
+
             if not len(five_seq.seq) == 0:
                 self.five_primes_list.append(five_seq)
             else:
-                # print('WARNING:\tRecord {} does not have 5\'-UTR'.format(record.id))
+                logger.debug('Record {} does not have 5\'-UTR'.format(record.id))
                 self.five_primes_empty.append(record.id)
 
             if not len(three_seq.seq) == 0:
                 self.three_primes_list.append(three_seq)
             else:
-                # print('WARNING:\tRecord {} does not have 3\'-UTR'.format(record.id))
+                logger.debug('Record {} does not have 3\'-UTR'.format(record.id))
                 self.three_primes_empty.append(record.id)
+
+        # drop the ignored sequences from the input info lists (they are already not appended to alignments)
+
+        self.fasta_list = [record for record in self.fasta_list if
+                           record.id not in set(ids_to_drop_from_input)]
+
+        self.fasta_list_records_id_ordered = [record_id for record_id in self.fasta_list_records_id_ordered if
+                                              record_id not in set(ids_to_drop_from_input)]
+        self.n_sequences = len(self.fasta_list_records_id_ordered)
+        logger.info('Ingnored sequences {}'.format(set(ids_to_drop_from_input)))
 
         return
 
@@ -278,16 +279,16 @@ class CdsAlignment():
         df_in = pd.DataFrame.from_dict(self.splittted_files_types, orient='index').reset_index()
         df_in.columns = ['input_files', 'alignment_type']
         df_in['output_files'] = df_in['input_files'].str.replace('.fasta', '').str.replace('.fa', '') + '.fasta_al'
-        df_in['n_sequences'] = pd.Series([n_sequences_in_partition[inpf] for inpf in df_in['input_files'].values.tolist()])
+        df_in['n_sequences'] = pd.Series(
+            [n_sequences_in_partition[inpf] for inpf in df_in['input_files'].values.tolist()])
 
-        self.alignnments_input_output_df = df_in[['input_files', 'output_files', 'alignment_type','n_sequences']]
+        self.alignnments_input_output_df = df_in[['input_files', 'output_files', 'alignment_type', 'n_sequences']]
         self.alignnments_input_output_df.to_csv(self.alignnments_input_output_file, sep='\t', index=False)
 
         # create emtpy output files (to simplify processing content-empty partitions)
-        for empty_output_file in  df_in['output_files'].values.tolist():
+        for empty_output_file in df_in['output_files'].values.tolist():
             f = open(empty_output_file, 'w')
             f.close()
-        print()
 
     def align(self):
 
@@ -296,16 +297,21 @@ class CdsAlignment():
             output = row['output_files']
             aln_type = row['alignment_type']
             cline = ''
-            require_alignment = bool(row['n_sequences']>0)
+            if logger.level == logging.DEBUG:
+                v = '-v'
+            else:
+                v = ''
+            require_alignment = bool(row['n_sequences'] > 0)
             if aln_type == 'aa' and require_alignment:
-                cline = 'clustalo -i {input} -o {out}  --threads 2 -v --force --seqtype protein'.format(input=input,
-                                                                                                        out=output)
+                cline = 'clustalo -i {input} -o {out}  --threads 2 {v} --force --seqtype protein '.format(input=input,
+                                                                                                          out=output,
+                                                                                                          v=v)
             elif (aln_type == 'nuc' or aln_type == 'nuc_cds') and require_alignment:
-                cline = 'clustalo -i {input} -o {out}  --threads 2 -v --force --seqtype DNA'.format(input=input,
-                                                                                                   out=output)
-            print(cline)
+                cline = 'clustalo -i {input} -o {out}  --threads 2 {v} --force --seqtype DNA '.format(input=input,
+                                                                                                      out=output, v=v)
+            logger.info(cline)
             return_code = subprocess.run(cline, shell=True).returncode
-            if return_code!=0:
+            if return_code != 0:
                 raise RuntimeError('Alignment program had non-zero return code for run\n\t {}'.format(cline))
 
         return
@@ -343,7 +349,8 @@ class CdsAlignment():
                 SeqRecord(seq=restored_sequence, id=record_nuc.id, name='', description=''))
         with open(self.restored_cds_fasta_file, 'w') as handle:
             SeqIO.write(self.restored_cds_aligned, handle, 'fasta')
-        print('INFO:\tRestored nucleotide seqeunce from protein alignment for CDS ')
+
+        logger.info('Restored nucleotide seqeunce from protein alignment for CDS ')
 
         return
 
@@ -358,17 +365,15 @@ class CdsAlignment():
         fasta_threes = dict(SeqIO.index(three_utr_file, format='fasta'))
         fasta_cds_aln = {record.id: record for record in self.restored_cds_aligned}
 
-
         # create mock deletion sequnces taht will stand for missing 5 and 3 UTR
-        if not fasta_threes.__len__()==0:
+        if not fasta_threes.__len__() == 0:
             mock_three_seq = '-' * len(fasta_threes.get(list(fasta_threes)[0]).seq)
         else:
             mock_three_seq = ''
-        if not fasta_fives.__len__()==0:
+        if not fasta_fives.__len__() == 0:
             mock_five_seq = '-' * len(fasta_fives[list(fasta_fives.keys())[0]].seq)
         else:
             mock_five_seq = ''
-
 
         concatenated_fasta_list = []
 
@@ -406,7 +411,6 @@ class CdsAlignment():
         handle.close()
 
 
-
 # input_file = '/home/egors/Projects/CDS-alignment/genbank_sample_data/segment2.fasta'
 # annot = '/home/egors/Projects/CDS-alignment/genbank_sample_data/annotation_segment2_test.tsv'
 # align=True
@@ -423,11 +427,13 @@ if __name__ == '__main__':
     parser.add_argument('-a', '--annot', type=str, help='cds annotation table', required=True, action='store')
 
     parser.add_argument('--align', dest='align', action='store_true', help='does split to UTRs and CDS and alignment')
-    parser.add_argument('--no-align', dest='align', action='store_false',help=
-                        'skip alignment and assume we already have all files in <fasta_name>.part directory')
-    parser.add_argument('--only-restore', dest='only_restore', action='store_true',help='Looks for alignment in <fasta_name>.part dir and put aligned sequences together ')
-
-    parser.set_defaults(align=True, only_restore=False)
+    parser.add_argument('--no-align', dest='align', action='store_false', help=
+    'skip alignment and assume we already have all files in <fasta_name>.part directory')
+    parser.add_argument('--only-restore', dest='only_restore', action='store_true',
+                        help='Looks for alignment in <fasta_name>.part dir and put aligned sequences together ')
+    parser.add_argument("-v", "--verbose", help="stdout verbosity",
+                        action="store_true")
+    parser.set_defaults(align=True, only_restore=False, verbose=True)
     args = parser.parse_args()
 
     input_file = args.fasta
@@ -435,8 +441,16 @@ if __name__ == '__main__':
     annot = args.annot
     align = args.align
     only_restore = args.only_restore
-    print(align,only_restore)
+
+    args = parser.parse_args()
+    if args.verbose:
+        logger = logging.getLogger()
+        handler = logging.StreamHandler()
+        formatter = logging.Formatter(
+            '%(asctime)s %(levelname)-8s %(message)s')
+        handler.setFormatter(formatter)
+        logger.addHandler(handler)
+        logger.setLevel(logging.INFO)
 
     CdsAlignment(fasta_file=input_file, annotation_table=annot, output_file=output_file,
                  do_align=align, only_restore=only_restore)
-
